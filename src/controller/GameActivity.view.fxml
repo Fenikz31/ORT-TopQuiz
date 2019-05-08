@@ -25,7 +25,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer1" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -33,7 +33,7 @@
                   <Insets bottom="10.0" left="100.0" right="100.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer2" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -41,7 +41,7 @@
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer3" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -49,7 +49,7 @@
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer4" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
