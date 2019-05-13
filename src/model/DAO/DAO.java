@@ -1,6 +1,10 @@
 package model.DAO;
 
+import java.sql.Connection;
+
 public abstract class DAO <T>{
+
+    public Connection connect = MySQLConnection.getInstance();
 
     //Puis les m�thodes "standard" pour le CRUD sur une entit�.�
     /** * Permet de r�cup�rer un objet via son ID * @param id * @return */

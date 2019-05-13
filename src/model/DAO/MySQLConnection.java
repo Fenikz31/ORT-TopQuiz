@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class MySQLConnection {
 
     /* A r�utiliser tel quel, juste ces 3 param�tres � changer */
-    private static String url = "jdbc:mysql://localhost/testjdbc?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private static String user = "root";
-    private static String passwd = "";
+    private static String url = "jdbc:mysql://localhost/ort_topquiz?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static String user = "admin";
+    private static String passwd = "admin";
 
     /** * Objet Connection */
     private static Connection connect;
