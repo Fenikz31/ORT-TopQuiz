@@ -30,7 +30,7 @@ public class MainActivity extends Application {
         // Create a variable 'fullText' and instantiate with ("Welcome back, " + firstname + "!\nYour last score was " + score + ", will you do better this time?")
         // Set fullText in mGreetingText
         // Set firstName in mNameInput
-        mNameInput.positionCaret(firstName.length()); // Positions the caret at the end of 'firstName'
+        //mNameInput.positionCaret(firstName.length()); // Positions the caret at the end of 'firstName'
         mPlayButton.setDisable(false); // Make it so 'mPlayButton' is not greyed anymore
     }
     

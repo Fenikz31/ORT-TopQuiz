@@ -1,16 +1,10 @@
 package controller;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.*;
 import javafx.stage.Stage;
 import model.Question;
 import model.QuestionBank;
@@ -223,7 +217,7 @@ public class GameActivity extends Application {
         }
 
         mQuestion = mQuestionBank.getQuestion();
-        this.displayQuestion();
+        this.displayQuestion(mQuestion);
 
         if (--mNumberOfQuestions == 0) {
             // End the game

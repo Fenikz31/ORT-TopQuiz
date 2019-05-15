@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class UserDAO extends DAO<User>{
+
+
     /**
      * Permet de récupérer un objet via son ID * @param id * @return
      *
@@ -17,17 +19,17 @@ public class UserDAO extends DAO<User>{
 
         try {
             Statement stmt = connect.createStatement();
-            ResultSet rs = stmt.executeQuery("Select * from useriant where id="+id);
+            ResultSet rs = stmt.executeQuery("Select * from userdao where id=" + id);
             while (rs.next()) {
-                int bd_id = rs.getInt("id");
-                String bd_nom = rs.getString("Nom");
-                String bd_prenom = rs.getString("Prenom");
-                String bd_filiere = rs.getString("fil");
+                int bd_id = rs.getInt("iduser");
+                String bd_firstName = rs.getString("Prénom");
+                String bd_score = rs.getString("score");
+                String bd_date = rs.getString("date");
 
                 user.setId(bd_id);
-                user.setNom(bd_nom);
-                user.setPrenom(bd_prenom);
-                user.setFiliere(bd_filiere);
+                user.setmFirstName(bd_firstName);
+                user.setEXTRA_SCORE(bd_score);
+                user.setmDate(bd_date);
             }
             return user;
         }
@@ -44,6 +46,29 @@ public class UserDAO extends DAO<User>{
      */
     @Override
     public User create(User obj) {
+        return null;
+    }
+
+    /**
+     * Permet de créer une entrée dans la base de données * par rapport à un objet
+     *
+     * @param name
+     */
+    @Override
+    public User create(String name) {
+        User user = new User();
+
+        try {
+            Statement stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("insert into userdao (prenom)values(?);");
+            while (rs.next()) {
+                String bd_firstName = rs.getString("Prénom");
+                user.setmFirstName(bd_firstName);
+            }
+            return user;
+        } catch (Exception e) {
+            System.out.println("UserDAO: create() failed: " + e.getLocalizedMessage());
+        }
         return null;
     }
 
