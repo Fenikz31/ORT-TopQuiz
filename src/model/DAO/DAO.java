@@ -2,9 +2,11 @@ package model.DAO;
 
 import java.sql.Connection;
 
+import static model.DAO.MySQLConnection.getInstance;
+
 public abstract class DAO <T>{
 
-    public Connection connect = MySQLConnection.getInstance();
+    Connection connect = getInstance();
 
     //Puis les méthodes "standard" pour le CRUD sur une entitée
 
@@ -13,13 +15,21 @@ public abstract class DAO <T>{
      */
     public abstract T find(long id);
 
-    /** * Permet de créer une entrée dans la base de données * par rapport à un objet*/
+    /**
+     * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
+     */
     public abstract T create(T obj);
 
     /**
-     * Permet de créer une entrée dans la base de données * par rapport à un objet
+     * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
      */
-    public abstract T create(String name);
+    public abstract T create_user(String pseudo);
+
+    /**
+     * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
+     */
+    public abstract T create_gameScore(String prenom, String score);
+
 
     /** * Permet de mettre à jour les donn�es d'une entrée dans la base  */
     public abstract T update(T obj);

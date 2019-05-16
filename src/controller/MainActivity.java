@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.DAO.UserDAO;
 import model.User;
 
 public class MainActivity extends Application {
@@ -61,5 +62,9 @@ public class MainActivity extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
+        UserDAO user = new UserDAO();
+//        user.create("Test");
+        user.create("Test", "4");
     }
 }

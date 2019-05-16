@@ -13,4 +13,29 @@ public class Question {
         this.setAnswerIndex(answerIndex);
     }
 
+    //Insert necessary getters and setters
+
+    public String getQuestion() {
+        return Question;
+    }
+
+    public void setQuestion(String question) {
+        Question = question;
+    }
+
+    public List<String> getChoiceList() {
+        return ChoiceList;
+    }
+
+    public void setChoiceList(List<String> choiceList) {
+        ChoiceList = choiceList;
+    }
+
+    public int getAnswerIndex() {
+        return AnswerIndex;
+    }
+
+    public void setAnswerIndex(int answerIndex) {
+        AnswerIndex = answerIndex;
+    }
 }

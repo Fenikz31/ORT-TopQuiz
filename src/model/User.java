@@ -10,13 +10,8 @@ public class User {
     public User() {
     }
 
-    public String getmFirstName() {
-        return mFirstName;
-    }
+    // Insert necessary getters and setters
 
-    public void setmFirstName(String mFirstName) {
-        this.mFirstName = mFirstName;
-    }
 
     public int getId() {
         return id;
@@ -24,6 +19,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getmFirstName() {
+        return mFirstName;
+    }
+
+    public void setmFirstName(String mFirstName) {
+        this.mFirstName = mFirstName;
     }
 
     public String getEXTRA_SCORE() {
@@ -40,10 +43,5 @@ public class User {
 
     public void setmDate(String mDate) {
         this.mDate = mDate;
-    }
-
-    @Override
-    public String toString() {
-        return mFirstName;
     }
 }
