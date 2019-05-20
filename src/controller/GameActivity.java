@@ -2,9 +2,11 @@ package controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Question;
 import model.QuestionBank;
@@ -13,6 +15,8 @@ import java.util.Arrays;
 
 public class GameActivity extends Application {
 
+    @FXML
+    private AnchorPane fxGameScene;
     @FXML
     private TextField mQuestionText;
     @FXML
@@ -205,6 +209,11 @@ public class GameActivity extends Application {
      */
     @Override
     public void start(Stage gameStage) {
+
+        Scene gameScene = new Scene(fxGameScene);
+        gameStage.setTitle("TopQuiz - Game");
+        gameStage.setScene(gameScene);
+        gameStage.show();
 
         mQuestionBank = this.generateQuestion();
 
