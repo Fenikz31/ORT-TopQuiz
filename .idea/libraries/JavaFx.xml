@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="JavaFx">
+    <CLASSES>
+      <root url="file://$PATH_TO_FX$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PATH_TO_FX$/javafx.base" />
+      <root url="file://$PATH_TO_FX$/javafx.controls" />
+      <root url="file://$PATH_TO_FX$/javafx.fxml" />
+      <root url="file://$PATH_TO_FX$/javafx.graphics" />
+      <root url="file://$PATH_TO_FX$/javafx.media" />
+      <root url="file://$PATH_TO_FX$/javafx.swing" />
+      <root url="file://$PATH_TO_FX$/javafx.web" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/build/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/demo/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/generated/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/legacy/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/main/core-api/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/main/core-impl/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/main/protocol-impl/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/main/user-api/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/main/user-impl/java" />
+      <root url="file://D:/LOGICIELS/mysql-connector-java-8.0.16/src/test/java" />
+    </SOURCES>
+    <jarDirectory url="file://$PATH_TO_FX$" recursive="false" />
+  </library>
+</component>

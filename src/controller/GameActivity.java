@@ -197,14 +197,14 @@ public class GameActivity extends Application {
      * NOTE: This method is called on the JavaFX Application Thread.
      * </p>
      *
-     * @param primaryStage the primary stage for this application, onto which
+     * @param gameStage the primary stage for this application, onto which
      *                     the application scene can be set.
      *                     Applications may create other stages, if needed, but they will not be
      *                     primary stages.
      * @throws Exception if something goes wrong
      */
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage gameStage) {
 
         mQuestionBank = this.generateQuestion();
 
