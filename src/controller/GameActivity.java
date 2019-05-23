@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Question;
@@ -20,7 +20,15 @@ public class GameActivity extends Application {
     @FXML
     private AnchorPane fxGameScene;
     @FXML
-    private TextField mQuestionText;
+    private Label mQuestionText;
+    @FXML
+    private Label mAnswerLbl1;
+    @FXML
+    private Label mAnswerLbl2;
+    @FXML
+    private Label mAnswerLbl3;
+    @FXML
+    private Label mAnswerLbl4;
     @FXML
     private Button mGameAnswer1;
     @FXML
@@ -43,10 +51,10 @@ public class GameActivity extends Application {
     private void displayQuestion(final Question question) {
         // Set the text for the question text view and the four buttons
         mQuestionText.setText(question.getQuestion());
-        mGameAnswer1.setText(question.getChoiceList().get(0));
-        mGameAnswer2.setText(question.getChoiceList().get(1));
-        mGameAnswer3.setText(question.getChoiceList().get(2));
-        mGameAnswer4.setText(question.getChoiceList().get(3));
+        mAnswerLbl1.setText(question.getChoiceList().get(0));
+        mAnswerLbl2.setText(question.getChoiceList().get(1));
+        mAnswerLbl3.setText(question.getChoiceList().get(2));
+        mAnswerLbl4.setText(question.getChoiceList().get(3));
     }
 
     private void endGame() {
@@ -214,8 +222,8 @@ public class GameActivity extends Application {
 
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setRoot(fxGameScene);
             loader.setLocation(GameActivity.class.getResource("GameActivity.view.fxml"));
+            loader.setRoot(fxGameScene);
             fxGameScene = loader.load();
 
             Scene gameScene = new Scene(fxGameScene);

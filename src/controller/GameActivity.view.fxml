@@ -4,8 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" fx:id="fxGameScene" prefHeight="640.0" prefWidth="600.0" type="AnchorPane"
-         xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.GameActivity">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="fxGameScene" prefHeight="640.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.GameActivity">
    <children>
       <VBox prefHeight="640.0" prefWidth="600.0">
          <children>
@@ -22,39 +22,55 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
             </Label>
-            <Button fx:id="mGameAnswer1" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer1" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <VBox.margin>
                   <Insets bottom="10.0" left="100.0" right="100.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <Label fx:id="mAnswerLbl1" alignment="CENTER" prefHeight="123.0" prefWidth="464.0"
+                         textAlignment="JUSTIFY"/>
+               </graphic>
             </Button>
-            <Button fx:id="mGameAnswer2" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer2" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <VBox.margin>
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
+               <graphic>
+                  <Label fx:id="mAnswerLbl2" alignment="CENTER" prefHeight="97.0" prefWidth="508.0"
+                         textAlignment="JUSTIFY"/>
+               </graphic>
             </Button>
-            <Button fx:id="mGameAnswer3" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer3" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <VBox.margin>
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
+               <graphic>
+                  <Label fx:id="mAnswerLbl3" alignment="CENTER" prefHeight="168.0" prefWidth="512.0"
+                         textAlignment="JUSTIFY"/>
+               </graphic>
             </Button>
-            <Button fx:id="mGameAnswer4" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0" text="Button">
+            <Button fx:id="mGameAnswer4" mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <VBox.margin>
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
+               <graphic>
+                  <Label fx:id="mAnswerLbl4" alignment="CENTER" prefHeight="156.0" prefWidth="475.0"
+                         textAlignment="JUSTIFY"/>
+               </graphic>
             </Button>
          </children>
       </VBox>
    </children>
-</fx:root>
+</AnchorPane>
