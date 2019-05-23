@@ -34,26 +34,38 @@ public class MainActivity extends Application {
 
     public void greetUser() {
 
-        String firstName = mPreferences.get(PREF_KEY_FIRSTNAME, null); // Create and instantiate a variable 'firstName' by getting PREF_KEY_FIRSTNAME and setting it to null
+        String firstName = null; // Create and instantiate a variable 'firstName' by getting PREF_KEY_FIRSTNAME and setting it to null
+        try {
+            firstName = mPreferences.get(PREF_KEY_FIRSTNAME, null);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
         if (firstName != null) {// If firstName isn't null
-            int score = mPreferences.getInt(PREF_KEY_SCORE, 0); // then create a variable 'score' and instantiate by getting PREF_KEY_SCORE and setting to 0
-
+            int score = Integer.parseInt(PREF_KEY_SCORE);
             String fulltext = "Welcome back, " + firstName + "!\nYour last score was " + score + ", will you do better this time?"; // Create a variable 'fullText' and instantiate with ("Welcome back, " + firstname + "!\nYour last score was " + score + ", will you do better this time?")
             mGreetingText.setText(fulltext); // Set fullText in mGreetingText
             mNameInput.setText(firstName); // Set firstName in mNameInput
             mNameInput.positionCaret(firstName.length()); // Positions the caret at the end of 'firstName'  *
             mPlayButton.setDisable(false); // Make it so 'mPlayButton' is not greyed anymore
+            mPreferences.getInt(PREF_KEY_SCORE, 0); // then create a variable 'score' and instantiate by getting PREF_KEY_SCORE and setting to 0 for a new game
+        } else {
+            String fulltext = null;
+            try {
+                fulltext = "Welcome in TopQuiz!";
+                mGreetingText.setText(fulltext);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 
     public void onMouseclicked() {
 
-        String firstName = mNameInput.getText(); // We declare that firstName is the string put in mNameInput
-        mUser.setmFirstName(firstName); // Make input declared the user's firstName
-
-        mPreferences.put(PREF_KEY_FIRSTNAME, mUser.getmFirstName()); // Associate PREF_KEY_FIRSTNAME and this user's firstName
         try {
+            String firstName = mNameInput.getText(); // We declare that firstName is the string put in mNameInput
+            mUser.setmFirstName(firstName); // Make input declared the user's firstName
+            mPreferences.put(PREF_KEY_FIRSTNAME, mUser.getmFirstName()); // Associate PREF_KEY_FIRSTNAME and this user's firstName
             mPreferences.sync(); // Make sure the change is applied
         } catch (BackingStoreException e) {
             e.printStackTrace();
@@ -63,20 +75,8 @@ public class MainActivity extends Application {
         mPlayButton.setOnMouseClicked((event) -> {
             GameActivity gameActivity = new GameActivity();
             gameActivity.start(new Stage());
-
-            MainActivity mainActivity = new MainActivity();
-            Stage primaryStage = new Stage();
-            mainActivity.start(primaryStage);
         });
-
-        try {
-            stop();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
-
-    
 
     /**
      * The main entry point for all JavaFX applications.
@@ -100,6 +100,7 @@ public class MainActivity extends Application {
 
         try {
             FXMLLoader loader = new FXMLLoader();
+            loader.setRoot(fxWelcomeScene);
             loader.setLocation(MainActivity.class.getResource("MainActivity.view.fxml"));
             fxWelcomeScene = loader.load();
 
@@ -111,33 +112,15 @@ public class MainActivity extends Application {
             System.out.println(e);
         }
 
-        mPlayButton.setDisable(true); // Grey out the playButton if firstName is null (no user created)
+       /* try {
+            mPlayButton.setDisable(true); // Grey out the playButton if firstName is null (no user created)
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
 
         greetUser(); // If done right, "playButton" shouldn't be grey anymore at this point
 
 
-    }
-
-    /**
-     * This method is called when the application should stop, and provides a
-     * convenient place to prepare for application exit and destroy resources.
-     *
-     * <p>
-     * The implementation of this method provided by the Application class does nothing.
-     * </p>
-     *
-     * <p>
-     * NOTE: This method is called on the JavaFX Application Thread.
-     * </p>
-     *
-     * @throws Exception if something goes wrong
-     */
-    @Override
-    public void stop() throws Exception {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainActivity.class.getResource("MainActivity.view.fxml"));
-        fxWelcomeScene = loader.load();
-        this.fxWelcomeScene.setVisible(false);
     }
 
     public static void main(String[] args) {

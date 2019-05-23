@@ -2,6 +2,7 @@ package controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 import model.Question;
 import model.QuestionBank;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class GameActivity extends Application {
@@ -136,6 +138,12 @@ public class GameActivity extends Application {
                 Arrays.asList("Aucune","L'hiver","Le printemps","l'automne"),
                 0);
 
+        Question question21 = new Question("Dans quelle ville se déroule chaque année le Festival interceltique ?",
+                Arrays.asList("Glasgow", "Lorient ", "Chicago", "Lisieux"), 1);
+
+        Question question22 = new Question("Sous quel titre français connaît-on le film \"Vertigo\" d'Alfred Hitchcock ?",
+                Arrays.asList("Sueurs froides", "Les Oiseaux", "Fenêtre sur cour", "Psychose"), 0);
+
 
 
         return new QuestionBank(Arrays.asList(question1,
@@ -157,19 +165,13 @@ public class GameActivity extends Application {
                 question17,
                 question18,
                 question19,
-                question20));
+                question20,
+                question21,
+                question22));
 
 
 
-        /*        "Dans quelle ville se déroule chaque année le Festival interceltique ? \n" +
-                "Lorient \n"
-
-                " \n" +
-                "\n"
-
-                "Sous quel titre français connaît-on le film \"Vertigo\" d'Alfred Hitchcock ? \n" +
-                "Sueurs froides \n"
-
+        /*
                 "Quel comédien est le mari de Mélanie Griffith ? \n" +
                 "Antonio Banderas \n"
 
@@ -210,10 +212,19 @@ public class GameActivity extends Application {
     @Override
     public void start(Stage gameStage) {
 
-        Scene gameScene = new Scene(fxGameScene);
-        gameStage.setTitle("TopQuiz - Game");
-        gameStage.setScene(gameScene);
-        gameStage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setRoot(fxGameScene);
+            loader.setLocation(GameActivity.class.getResource("GameActivity.view.fxml"));
+            fxGameScene = loader.load();
+
+            Scene gameScene = new Scene(fxGameScene);
+            gameStage.setTitle("TopQuiz - Game");
+            gameStage.setScene(gameScene);
+            gameStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         mQuestionBank = this.generateQuestion();
 
