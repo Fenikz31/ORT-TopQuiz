@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ee793ac-166a-4efb-8ff2-7001a8a668e3" name="fifty-fifty" comment="">
+    <list default="true" id="156be706-bbd5-4b43-a53a-c2dc9ed71537" name="branch" comment="branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameActivity.view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameActivity.view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/QuestionBank.java" afterDir="false" />
     </list>
-    <list id="156be706-bbd5-4b43-a53a-c2dc9ed71537" name="branch" comment="branch" />
     <list id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="2019/05/23 &#10;&#10;File module.info.java deleted.&#10;The program launch,but there's an error line 112 of MainActivity">
       <change beforePath="$PROJECT_DIR$/src/controller/GameActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainActivity.java" afterDir="false" />
@@ -110,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="58" column="86" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="59" selection-end-column="34" />
+            <state relative-caret-position="-176">
+              <caret line="55" column="61" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/model/Question.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="431">
-              <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="e#632#633#0" expanded="true" />
                 <element signature="e#665#666#0" expanded="true" />
@@ -160,8 +155,8 @@
         <entry file="file://$PROJECT_DIR$/src/controller/GameActivity.view.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="183" selection-start-line="9" selection-start-column="183" selection-end-line="9" selection-end-column="183" />
+            <state relative-caret-position="32">
+              <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -233,6 +228,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6ab6af475e63387d161d95b1fe0a4023ce81007f" />
+      </map>
+    </option>
     <option name="RESET_MODE" value="HARD" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
@@ -251,28 +251,10 @@
         <option value="$PROJECT_DIR$/src/controller/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/model/QuestionBank.java" />
         <option value="$PROJECT_DIR$/src/model/Question.java" />
-        <option value="$PROJECT_DIR$/src/controller/GameActivity.java" />
         <option value="$PROJECT_DIR$/src/controller/GameActivity.view.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/GameActivity.java" />
       </list>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/controller/GameActivity.java">
-      <ranges>
-        <range start1="50" end1="51" start2="50" end2="52" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="52" end1="57" start2="53" end2="72" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="231" end1="231" start2="246" end2="248" changelist="8ee793ac-166a-4efb-8ff2-7001a8a668e3" />
-        <range start1="237" end1="238" start2="254" end2="254" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="247" end1="247" start2="263" end2="265" changelist="8ee793ac-166a-4efb-8ff2-7001a8a668e3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/model/Question.java">
-      <ranges>
-        <range start1="15" end1="15" start2="15" end2="19" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="18" end1="19" start2="22" end2="23" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="40" end1="40" start2="44" end2="46" changelist="8ee793ac-166a-4efb-8ff2-7001a8a668e3" />
-      </ranges>
-    </file>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -491,9 +473,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.MainApp" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
@@ -515,7 +497,7 @@
       <changelist id="156be706-bbd5-4b43-a53a-c2dc9ed71537" name="branch" comment="" />
       <changelist id="fda181af-7acd-4eba-bbb1-b39bf89868d5" name="module-info deleted" comment="" />
       <changelist id="" name="update Main Activity" comment="" />
-      <changelist id="8ee793ac-166a-4efb-8ff2-7001a8a668e3" name="fifty-fifty" comment="" />
+      <changelist id="" name="fifty-fifty" comment="" />
       <created>1359379246138</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -592,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558932985211</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fifty-fifty">
+      <created>1558941421809</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558941421809</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -608,7 +597,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1015" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1015" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5443478" visible="true" weight="0.23375931" />
@@ -754,7 +743,8 @@
     <MESSAGE value="2019/05/23&#10;&#10;File module.info.java deleted.&#10;The program launch,but there's an error line 112 of MainActivity.&#10;Try / catch in method greetUser().&#10;&#10;Signed-off-by: Fenikz &lt;45063328+Fenikz31@users.noreply.github.com&gt;" />
     <MESSAGE value="2019/05/23&#10;&#10;File module.info.java deleted.&#10;The program launch,but there's an error line 112 of MainActivity.&#10;Try / catch in method greetUser().&#10;Completion of the start method in GameActivity.&#10;&#10;Signed-off-by: Fenikz &lt;45063328+Fenikz31@users.noreply.github.com&gt;" />
     <MESSAGE value="update Main Activity&#10;MainActivity works fine" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Main Activity&#10;MainActivity works fine" />
+    <MESSAGE value="fifty-fifty" />
+    <option name="LAST_COMMIT_MESSAGE" value="fifty-fifty" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1041,7 +1031,7 @@
     <entry file="file://$PROJECT_DIR$/src/model/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
-          <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="e#632#633#0" expanded="true" />
             <element signature="e#665#666#0" expanded="true" />
@@ -1052,15 +1042,15 @@
     <entry file="file://$PROJECT_DIR$/src/controller/GameActivity.view.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="183" selection-start-line="9" selection-start-column="183" selection-end-line="9" selection-end-column="183" />
+        <state relative-caret-position="32">
+          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="58" column="86" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="59" selection-end-column="34" />
+        <state relative-caret-position="-176">
+          <caret line="55" column="61" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
