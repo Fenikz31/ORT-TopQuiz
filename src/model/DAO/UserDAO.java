@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class UserDAO extends DAO<User>{
 
@@ -34,8 +35,37 @@ public class UserDAO extends DAO<User>{
                 user.setmDate(bd_date);
             }
             return user;
+        } catch (Exception e) {
+            System.out.println("UserDAO: find() failed: " + e.getLocalizedMessage());
         }
-        catch (Exception e) {
+        return null;
+    }
+
+    /**
+     * Permet de récupérer un objet via son prenom * @param pseudo * @return
+     *
+     * @param pseudo
+     */
+    @Override
+    public User find(String pseudo) {
+        User user = new User();
+
+        try {
+            Statement stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("Select * from userdao where prenom=" + pseudo);
+            while (rs.next()) {
+                int bd_id = rs.getInt("iduser");
+                String bd_firstName = rs.getString("Prénom");
+                String bd_score = rs.getString("score");
+                String bd_date = rs.getString("date");
+
+                user.setId(bd_id);
+                user.setmFirstName(bd_firstName);
+                user.setEXTRA_SCORE(bd_score);
+                user.setmDate(bd_date);
+            }
+            return user;
+        } catch (Exception e) {
             System.out.println("UserDAO: find() failed: "+e.getLocalizedMessage());
         }
         return null;
@@ -48,6 +78,47 @@ public class UserDAO extends DAO<User>{
      */
     @Override
     public User create(User obj) {
+        return null;
+    }
+
+    /**
+     * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
+     */
+    @Override
+    public User create_user() {
+        User user = new User();
+        try {
+            Statement stmt = connect.createStatement();
+
+            PreparedStatement prepStmt;
+            String insertTableUserdao = "INSERT INTO userdao"
+                    + "(prenom) VALUES"
+                    + "(?)";
+            Scanner inputPseudo = new Scanner(System.in);
+            System.out.println("enter your name: ");
+            user.setmFirstName(String.valueOf(inputPseudo));
+            String bd_firstName = user.getmFirstName();
+
+            prepStmt = connect.prepareStatement(insertTableUserdao);
+
+            prepStmt.setString(1, bd_firstName);
+
+            prepStmt.executeUpdate();
+
+            // Récupérer l'utilisateur créé, avec son id auto-incrémenté
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM userdao");
+            resultSet.next();
+
+            int bd_iduser = resultSet.getInt("iduser");
+            bd_firstName = resultSet.getString("prenom");
+
+            prepStmt.close();
+
+            return user;
+
+        } catch (SQLException e) {
+            System.out.println("Insert into table 'user' failed! " + e.getLocalizedMessage());
+        }
         return null;
     }
 

@@ -4,17 +4,16 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.User;
+import model.DAO.UserDAO;
 
 import java.io.IOException;
 import java.util.prefs.Preferences;
-
-import static java.util.prefs.Preferences.userRoot;
 
 public class MainActivity extends Application {
 
@@ -26,7 +25,7 @@ public class MainActivity extends Application {
     @FXML
     private Button mPlayButton;
     @FXML
-    private User mUser;
+    private UserDAO mUser = new UserDAO();
     private static final String PREF_KEY_FIRSTNAME = "PREF_KEY_FIRSTNAME"; // Create a class variable to store key's firstname name
     @FXML
     private AnchorPane fxWelcomeScene;
@@ -34,51 +33,70 @@ public class MainActivity extends Application {
 
     public void greetUser() {
 
-        String firstName = null; // Create and instantiate a variable 'firstName' by getting PREF_KEY_FIRSTNAME and setting it to null
-        try {
-            firstName = mPreferences.get(PREF_KEY_FIRSTNAME, String.valueOf(mNameInput));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        String firstName; // Create and instantiate a variable 'firstName' by getting PREF_KEY_FIRSTNAME and setting it to null
 
-        if (firstName != null) {// If firstName isn't null
+        // Make sure the user's name is 3 characters or more long
+        if (mNameInput.getText().isEmpty()) {// If firstName isn't null
             int score = mPreferences.getInt(PREF_KEY_SCORE, 0);
+            firstName = mPreferences.get(PREF_KEY_FIRSTNAME, mNameInput.getText()); // Get the text the user insert
+
             String fulltext = "Welcome back, " + firstName + "!\nYour last score was " + score + ", will you do better this time?"; // Create a variable 'fullText' and instantiate with ("Welcome back, " + firstname + "!\nYour last score was " + score + ", will you do better this time?")
-            try {
+
+            if (firstName.equals(mUser.find(firstName).getmFirstName()))
                 mGreetingText.setText(fulltext); // Set fullText in mGreetingText
-                mNameInput.setText(firstName); // Set firstName in mNameInput
-                mNameInput.positionCaret(firstName.length()); // Positions the caret at the end of 'firstName'  *
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            //mPlayButton.setDisable(false); // Make it so 'mPlayButton' is not greyed anymore
-            mPreferences.getInt(PREF_KEY_SCORE, 0); // then create a variable 'score' and instantiate by getting PREF_KEY_SCORE and setting to 0 for a new game
-        } else {
-            String fulltext = null;
-            try {
-                firstName = mNameInput.getText();
-                fulltext = "Welcome " + firstName + " in TopQuiz!";
-                mUser.setmFirstName(firstName);
+
+            mPreferences.putInt(PREF_KEY_SCORE, 0); // then create a variable 'score' and instantiate by getting PREF_KEY_SCORE and setting to 0 for a new game
+        } else while (mNameInput.getLength() <= 3) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error name input");
+            alert.setHeaderText("Look, an Error Dialog");
+            alert.setContentText("Make sure the user's name contains 3 characters or more");
+
+            alert.showAndWait();
+            if (mNameInput.getLength() > 3) {
+                firstName = mNameInput.textProperty().getValue();
+                String fulltext = "Welcome " + firstName + " in TopQuiz!";
+
+                System.out.println("firstName = " + firstName);
+                mUser.create_user(firstName);
                 mGreetingText.setText(fulltext);
-            } catch (Exception e) {
-                System.out.println(e);
+                mGreetingText.getText();
+
+                // Create another user in database if the user's name is not in the database
+                if (!firstName.equals(String.valueOf(mUser.find(firstName).getmFirstName()))) {
+                    mUser = new UserDAO();
+                    mUser.create_user(firstName).setmFirstName(firstName);
+                    System.out.println(mUser.find(firstName).getmFirstName());
+                } else {
+                    mUser.find(firstName).setmFirstName(firstName);
+                    System.out.println(mUser.find(firstName).getmFirstName());
+                }
             }
         }
     }
 
     public void onMouseclicked() {
-/*
-        try {
-            String firstName = mNameInput.getText(); // We declare that firstName is the string put in mNameInput
-            mUser.setmFirstName(firstName); // Make input declared the user's firstName
-            mPreferences.put(PREF_KEY_FIRSTNAME, mUser.getmFirstName()); // Associate PREF_KEY_FIRSTNAME and this user's firstName
-            mPreferences.sync(); // Make sure the change is applied
-        } catch (BackingStoreException e) {
-            e.printStackTrace();
-        }*/
 
         // User clicked the button
         mPlayButton.setOnMouseClicked((event) -> {
+            if (event.getClickCount() == 1) {
+
+                if (mNameInput.getLength() == 0) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error name input");
+                    alert.setHeaderText("Look, an Error Dialog");
+                    alert.setContentText("Make sure to fill the user's name");
+
+                    alert.showAndWait();
+                }
+            }
+            greetUser();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             GameActivity gameActivity = new GameActivity();
             gameActivity.start(new Stage());
         });
@@ -101,9 +119,6 @@ public class MainActivity extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        mUser = new User();
-        mPreferences = userRoot();
-
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainActivity.class.getResource("MainActivity.view.fxml"));
@@ -118,13 +133,6 @@ public class MainActivity extends Application {
             System.out.println(e);
         }
 
-       /* try {
-            mPlayButton.setDisable(true); // Grey out the playButton if firstName is null (no user created)
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-
-        greetUser(); // If done right, "playButton" shouldn't be grey anymore at this point
 
 
     }

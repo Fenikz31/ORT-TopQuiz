@@ -16,9 +16,20 @@ public abstract class DAO <T>{
     public abstract T find(long id);
 
     /**
+     * Permet de récupérer un objet via son ID * @param id * @return
+     */
+    public abstract T find(String pseudo);
+
+    /**
      * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
      */
     public abstract T create(T obj);
+
+
+    /**
+     * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet
+     */
+    public abstract T create_user();
 
     /**
      * Permet de créer une entrée dans la base de données ort_quiz par rapport à un objet

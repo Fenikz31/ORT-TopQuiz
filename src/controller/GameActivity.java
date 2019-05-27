@@ -48,13 +48,29 @@ public class GameActivity extends Application {
     public static final String STATE_SCORE = "currentScore";
     public static final String STATE_QUESTION = "currentQuestion";
 
-    private void displayQuestion(final Question question) {
+
+    void displayQuestion(Question question) {
         // Set the text for the question text view and the four buttons
-        mQuestionText.setText(question.getQuestion());
+        // if (String.valueOf(mQuestionText).isEmpty()) {
+        // mQuestionText.setText(question.getQuestion());
+        //mQuestionText = String.valueOf(mQuestion.getQuestion());
+        mQuestionText.setText("ploplpoplop");
+
+        mQuestionText.getText();
+        System.out.println(mQuestion);
+        mAnswerLbl1.getText();
         mAnswerLbl1.setText(question.getChoiceList().get(0));
+
+        mAnswerLbl2.getText();
         mAnswerLbl2.setText(question.getChoiceList().get(1));
+
+        mAnswerLbl3.getText();
         mAnswerLbl3.setText(question.getChoiceList().get(2));
+
+        mAnswerLbl4.getText();
         mAnswerLbl4.setText(question.getChoiceList().get(3));
+        // }
+
     }
 
     private void endGame() {
@@ -237,7 +253,6 @@ public class GameActivity extends Application {
         }
 
         mQuestionBank = this.generateQuestion();
-
         if (mScore != 0){
             mScore = Integer.valueOf(STATE_SCORE);
             mNumberOfQuestions = Integer.valueOf(STATE_QUESTION);

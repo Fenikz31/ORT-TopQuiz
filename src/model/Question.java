@@ -13,6 +13,10 @@ public class Question {
         this.setAnswerIndex(answerIndex);
     }
 
+    public Question() {
+
+    }
+
     //Insert necessary getters and setters
 
     public String getQuestion() {
