@@ -20,6 +20,9 @@ public class QuestionBank {
         if (mNextQuestionIndex == mQuestionList.size()) {
             mNextQuestionIndex = 0;
         }
-        return mQuestionList.get(mNextQuestionIndex++);
+        Question toret = mQuestionList.get(mNextQuestionIndex);
+        mNextQuestionIndex++;
+        return toret;
+
     }
 }

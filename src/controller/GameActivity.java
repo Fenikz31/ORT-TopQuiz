@@ -229,6 +229,8 @@ public class GameActivity extends Application {
             Scene gameScene = new Scene(fxGameScene);
             gameStage.setTitle("TopQuiz - Game");
             gameStage.setScene(gameScene);
+
+
             gameStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -245,6 +247,8 @@ public class GameActivity extends Application {
         }
 
         mQuestion = mQuestionBank.getQuestion();
+        System.out.println(mQuestion);
+
         this.displayQuestion(mQuestion);
 
         if (--mNumberOfQuestions == 0) {

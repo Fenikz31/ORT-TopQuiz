@@ -38,4 +38,8 @@ public class Question {
     public void setAnswerIndex(int answerIndex) {
         AnswerIndex = answerIndex;
     }
+
+    public String toString() {
+        return "je suis une question";
+    }
 }
